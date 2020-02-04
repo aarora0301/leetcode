@@ -1,4 +1,4 @@
-package Leetcode.Arrays;
+package Arrays;
 
 /**
  * https://leetcode.com/problems/remove-duplicates-from-sorted-array/#

@@ -1,4 +1,4 @@
-package Leetcode.Arrays;
+package Arrays;
 
 /**
  * 1160. Find Words That Can Be Formed by Characters
@@ -41,7 +41,7 @@ public class FindWords {
             if (parent[index] == 0) {
                 return false;
             }
-            if (temp[index] <= parent[index]) {
+            if (temp[index] == parent[index]) {
                 continue;
             } else return false;
         }
