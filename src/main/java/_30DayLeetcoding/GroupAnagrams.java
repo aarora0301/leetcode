@@ -38,7 +38,7 @@ public class GroupAnagrams {
         }
         List<List<String>> result = new ArrayList<>();
         ArrayList<String> sub;
-        for (Map.Entry mapElement : map.entrySet()) {
+        for (Map.Entry<String , List<String>> mapElement : map.entrySet()) {
             sub = (ArrayList<String>) mapElement.getValue();
             result.add(sub);
         }
