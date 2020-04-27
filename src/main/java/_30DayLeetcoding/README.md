@@ -4,3 +4,4 @@
 - [Number of Islands](https://leetcode.com/explore/other/card/30-day-leetcoding-challenge/530/week-3/3302/)
 - [Minimum Path Sum](https://leetcode.com/explore/other/card/30-day-leetcoding-challenge/530/week-3/3303/)
 - [Valid Parenthesis String](https://leetcode.com/explore/other/card/30-day-leetcoding-challenge/530/week-3/3301/)
+- [Left Most Column With Atleast a One](https://leetcode.com/explore/other/card/30-day-leetcoding-challenge/530/week-3/3306/)
