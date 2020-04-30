@@ -25,9 +25,9 @@ public class SubArraySumEqualsK {
             sum += num;
             if (hashMap.containsKey(sum - k)) {
                 count += hashMap.get(sum - k);
-            } else {
-                hashMap.put(sum, hashMap.getOrDefault(sum, 0) + 1);
             }
+                hashMap.put(sum, hashMap.getOrDefault(sum, 0) + 1);
+
         }
         return count;
     }
