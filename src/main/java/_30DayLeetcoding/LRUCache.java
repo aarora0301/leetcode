@@ -129,7 +129,7 @@ public class LRUCache {
 
 class Node {
     int key;
-    int val = 0;
+    int val = -1;
     Node prev;
     Node next;
 }
