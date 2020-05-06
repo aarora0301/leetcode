@@ -10,3 +10,4 @@
 - [Jump Game](https://leetcode.com/explore/other/card/30-day-leetcoding-challenge/531/week-4/3310/#)
 - [Bitwise And of Range of Numbers](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/531/week-4/3308/)
 - [Maximum Path Sum](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/532/week-5/3314/)
+- [Valid Sequence](https://thefellowprogrammer.blogspot.com/2020/04/check-if-string-is-valid-sequence-from.html)
