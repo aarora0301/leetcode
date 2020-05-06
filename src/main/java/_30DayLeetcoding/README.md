@@ -9,3 +9,4 @@
 - [First Unique Number](https://github.com/aarora0301/leetcode/blob/master/src/main/java/_30DayLeetcoding/FirstUniqueNumber.java)
 - [Jump Game](https://leetcode.com/explore/other/card/30-day-leetcoding-challenge/531/week-4/3310/#)
 - [Bitwise And of Range of Numbers](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/531/week-4/3308/)
+- [Maximum Path Sum](https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/532/week-5/3314/)
