@@ -1,4 +1,4 @@
-package main.java.May_LeetCodingChallenge;
+package main.java.May_LeetCodingChallenge.Week1;
 
 /****
  * Given a positive integer num, output its complement number. The complement strategy

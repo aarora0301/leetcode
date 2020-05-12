@@ -1,4 +1,4 @@
-package main.java.May_LeetCodingChallenge;
+package main.java.May_LeetCodingChallenge.Week1;
 
 /****
  *  First Bad Version
