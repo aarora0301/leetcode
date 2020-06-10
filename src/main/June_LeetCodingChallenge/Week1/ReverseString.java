@@ -1,4 +1,4 @@
-package main.June_LeetCodingChallenge;
+package main.June_LeetCodingChallenge.Week1;
 
 /****
  * Write a function that reverses a string. The input string is given as an array of characters char[].

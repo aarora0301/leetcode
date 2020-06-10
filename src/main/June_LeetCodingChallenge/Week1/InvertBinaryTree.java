@@ -1,4 +1,4 @@
-package main.June_LeetCodingChallenge;
+package main.June_LeetCodingChallenge.Week1;
 
 /***
  * Invert a binary tree.

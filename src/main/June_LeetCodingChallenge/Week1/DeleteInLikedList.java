@@ -1,4 +1,4 @@
-package main.June_LeetCodingChallenge;
+package main.June_LeetCodingChallenge.Week1;
 
 /***
  * Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.

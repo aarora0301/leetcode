@@ -1,4 +1,4 @@
-package main.June_LeetCodingChallenge;
+package main.June_LeetCodingChallenge.Week1;
 
 /*****
  * Given an array w of positive integers, where w[i] describes the weight of index i, write a function pickIndex which
