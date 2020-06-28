@@ -26,19 +26,26 @@ public class PermutationSequence {
 
 
     private String result = "";
-    int count= 0;
+    int count = 0;
 
+    /***
+     *  This will not work as while doing backtracking sequence is not always sorted
+     *   Example "123" , k = 5  sequence is 321 and for k = 6 sequence is 312
+     * @param n
+     * @param k
+     * @return
+     */
     public String getPermutation(int n, int k) {
 
-        StringBuilder str= new StringBuilder();
-        for (int i=1 ; i<=n; i++){
+        StringBuilder str = new StringBuilder();
+        for (int i = 1; i <= n; i++) {
             str.append(i);
         }
         permute(k, str.toString().toCharArray(), 0);
         return result;
     }
 
-    public void permute(int k,  char[] num, int start) {
+    public void permute(int k, char[] num, int start) {
         if (start == num.length - 1) {
             count++;
             if (count == k) {
@@ -59,9 +66,36 @@ public class PermutationSequence {
         ch[j] = temp;
     }
 
+    /***
+     *  https://leetcode.com/problems/permutation-sequence/discuss/696452/Algorithm-Explained-w-example
+     * @param n
+     * @param k
+     * @return
+     */
+    public String _getPermutation(int n, int k) {
+        int[] fact = new int[n];
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+
+        fact[0] = 1;
+        for (int i = 1; i < n; i++) {
+            fact[i] = fact[i - 1] * i;
+            list.add(i + 1);
+        }
+        k--;
+        StringBuilder builder = new StringBuilder();
+        for (int i = n - 1; i >= 0; i--) {
+            int j = k / fact[i];
+            k -= j * fact[i];
+            builder.append(list.get(j));
+            list.remove(j);
+        }
+        return builder.toString();
+    }
+
     public static void main(String[] args) {
         PermutationSequence test = new PermutationSequence();
-        int k=3;
+        int k = 3;
         System.out.println(test.getPermutation(3, 6));
     }
 }
