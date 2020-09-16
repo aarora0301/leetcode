@@ -20,6 +20,8 @@ import java.util.List;
  * Input: graph = [[1,2],[2,3],[5],[0],[5],[],[]]
  * Output: [2,4,5,6]
  * Here is a diagram of the above graph.
+ *
+ * source: https://code.dennyzhang.com/find-eventual-safe-states
  */
 public class EventualSafeState {
 
