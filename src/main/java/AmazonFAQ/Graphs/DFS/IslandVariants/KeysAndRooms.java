@@ -1,6 +1,5 @@
-package main.java.AmazonFAQ.DFS.IslandVariants;
+package main.java.AmazonFAQ.Graphs.DFS.IslandVariants;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;

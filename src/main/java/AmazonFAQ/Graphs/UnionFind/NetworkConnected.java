@@ -1,4 +1,4 @@
-package main.java.AmazonFAQ.UnionFind;
+package main.java.AmazonFAQ.Graphs.UnionFind;
 
 
 /***

@@ -1,4 +1,4 @@
-package main.java.AmazonFAQ.DFS.Cycle;
+package main.java.AmazonFAQ.Graphs.DFS.Cycle;
 
 import java.util.ArrayList;
 import java.util.List;

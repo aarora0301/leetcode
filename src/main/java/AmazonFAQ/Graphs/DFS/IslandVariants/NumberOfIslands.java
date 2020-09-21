@@ -1,4 +1,4 @@
-package main.java.AmazonFAQ.DFS.IslandVariants;
+package main.java.AmazonFAQ.Graphs.DFS.IslandVariants;
 
 /***
  * Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is

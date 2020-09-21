@@ -1,4 +1,4 @@
-package main.java.AmazonFAQ.DFS.IslandVariants;
+package main.java.AmazonFAQ.Graphs.DFS.IslandVariants;
 
 
 /*****

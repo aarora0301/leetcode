@@ -1,4 +1,4 @@
-package main.java.AmazonFAQ.DFS.IslandVariants;
+package main.java.AmazonFAQ.Graphs.DFS.IslandVariants;
 
 /***********
  * Given a 2D grid consists of 0s (land) and 1s (water).  An island is a maximal 4-directionally connected group of 0s and a closed

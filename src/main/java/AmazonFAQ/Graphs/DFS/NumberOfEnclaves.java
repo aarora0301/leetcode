@@ -1,4 +1,4 @@
-package main.java.AmazonFAQ.DFS;
+package main.java.AmazonFAQ.Graphs.DFS;
 
 
 /*****

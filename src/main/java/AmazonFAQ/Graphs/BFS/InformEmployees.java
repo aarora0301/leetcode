@@ -1,4 +1,4 @@
-package main.java.AmazonFAQ.BFS;
+package main.java.AmazonFAQ.Graphs.BFS;
 
 
 import java.util.*;
