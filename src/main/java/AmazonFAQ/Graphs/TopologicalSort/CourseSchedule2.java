@@ -29,6 +29,7 @@ import java.util.*;
  * So one correct course order is [0,1,2,3]. Another correct ordering is [0,2,1,3].
  */
 public class CourseSchedule2 {
+
     private ArrayList[] graph;
     private boolean[] isVisited;
     private boolean[] onStack;
@@ -88,6 +89,7 @@ public class CourseSchedule2 {
             }
         }
         Arrays.fill(isVisited, false);
+
     }
 
     private void dfs_cyclicity(ArrayList[] graph, int course) {
@@ -105,7 +107,6 @@ public class CourseSchedule2 {
         }
         onStack[course] = false;
     }
-
     public static void main(String[] args) {
         CourseSchedule2 top = new CourseSchedule2();
         int[][] preq = {{0,1}, {1,0}};
