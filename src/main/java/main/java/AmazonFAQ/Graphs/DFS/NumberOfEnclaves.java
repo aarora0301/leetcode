@@ -26,7 +26,7 @@ package main.java.AmazonFAQ.Graphs.DFS;
  */
 public class NumberOfEnclaves {
 
-    public int numEnclaves(int[][] A) {
+    public static int numEnclaves(int[][] A) {
 
         int ans = 0;
         if (A == null || A.length == 0) {
@@ -53,7 +53,7 @@ public class NumberOfEnclaves {
         return ans;
     }
 
-    public void dfs(int[][] A, int row, int col) {
+    public static void dfs(int[][] A, int row, int col) {
         if (row < 0 || row >= A.length || col < 0 || col >= A[0].length || A[row][col] != 1) {
             return;
         }
@@ -62,5 +62,11 @@ public class NumberOfEnclaves {
         dfs(A, row - 1, col);
         dfs(A, row, col - 1);
         dfs(A, row, col + 1);
+    }
+
+    public static void main(String[] args) {
+        int [][] arr= {{0,0,0,1},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
+        int num= numEnclaves(arr);
+        System.out.println(num);
     }
 }

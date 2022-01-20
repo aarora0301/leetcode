@@ -29,50 +29,51 @@ import java.util.List;
  */
 public class PossibleBipartition {
 
-    ArrayList<Integer>[] graph;
-    boolean[] color;
-    boolean[] marked;
-    boolean isPartition;
+   ArrayList<Integer>[] graph;
+   boolean[] color;
+   boolean[] marked;
+   boolean isPartition;
 
-    public boolean possibleBipartition(int N, int[][] dislikes) {
-        isPartition = true;
-        color = new boolean[N + 1];
-        graph = new ArrayList[N + 1];
-        marked = new boolean[N + 1];
-        for (int i = 1; i <= N; i++) {
-            graph[i] = new ArrayList<>();
-        }
+   public boolean possibleBipartition(int N, int[][] dislikes) {
+      isPartition = true;
+      color = new boolean[N + 1];
+      graph = new ArrayList[N + 1];
+      marked = new boolean[N + 1];
+      for (int i = 1; i <= N; i++) {
+         graph[i] = new ArrayList<>();
+      }
 
-        for (int[] edge : dislikes) {
-            graph[edge[0]].add(edge[1]);
-            graph[edge[1]].add(edge[0]);
-        }
+      for (int[] edge : dislikes) {
+         graph[edge[0]].add(edge[1]);
+         graph[edge[1]].add(edge[0]);
+      }
 
-        for (int vertex = 1; vertex <= N; vertex++) {
-            if (!marked[vertex]) {
-                dfs(graph, vertex);
-            }
-        }
-        return isPartition;
-    }
+      for (int vertex = 1; vertex <= N; vertex++) {
+         if (!marked[vertex]) {
+            dfs(graph, vertex);
+         }
+      }
+      return isPartition;
+   }
 
-    private void dfs(ArrayList<Integer>[] graph, int vertex) {
-        marked[vertex] = true;
-        List<Integer> neighbours = graph[vertex];
-        neighbours.forEach(neighbour -> {
-            if (!marked[neighbour]) {
-                color[neighbour] = !color[vertex];
-                dfs(graph, neighbour);
-            } else if (color[neighbour] == color[vertex]) {
-                isPartition = false;
-            }
-        });
-    }
+   private void dfs(ArrayList<Integer>[] graph, int vertex) {
+      marked[vertex] = true;
+      List<Integer> neighbours = graph[vertex];
+      neighbours.forEach(neighbour -> {
+         if (!marked[neighbour]) {
+            color[neighbour] = !color[vertex];
+            dfs(graph, neighbour);
+         } else if (color[neighbour] == color[vertex]) {
+            isPartition = false;
+         }
+      });
+   }
 
-    public static void main(String[] args) {
-        PossibleBipartition test = new PossibleBipartition();
-        System.out.println(test.possibleBipartition(5, new int[][]{{1, 2}, {2, 3}, {3, 4}, {4, 5}, {1, 5}}));
-    }
+   public static void main(String[] args) {
+      PossibleBipartition test = new PossibleBipartition();
+      System.out.println(test.possibleBipartition(5,
+            new int[][] { { 1, 2 }, { 2, 3 }, { 3, 4 }, { 4, 5 }, { 1, 5 } }));
+   }
 
 }
 

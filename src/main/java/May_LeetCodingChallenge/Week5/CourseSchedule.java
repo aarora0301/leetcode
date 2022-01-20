@@ -1,7 +1,11 @@
 package main.java.May_LeetCodingChallenge.Week5;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 
 /****
  * There are a total of numCourses courses you have to take, labeled from 0 to numCourses-1.
@@ -79,6 +83,51 @@ public class CourseSchedule {
          */
         onRecursionStack[vertex] = false;
     }
+
+    /***
+     * Kahns Algorithm
+     * @param numCourses
+     * @param prerequisites
+     * @return
+     */
+    public boolean _canFinish(int numCourses, int[][] prerequisites) {
+        if (prerequisites == null || prerequisites.length == 0) {
+            return false;
+        }
+        int[] inDegree = new int[numCourses];
+        Queue<Integer> queue = new LinkedList<>();
+        int nodeCount = 0;
+
+        Map<Integer, List<Integer>> neighboursMap = new HashMap<>();
+        for (int[] neighbour : prerequisites) {
+            neighboursMap.putIfAbsent(neighbour[0], new ArrayList<>());
+            neighboursMap.get(neighbour[0]).add(neighbour[1]);
+            inDegree[neighbour[1]]++;
+        }
+
+        for (int i = 0; i < numCourses; i++) {
+            if (inDegree[i] == 0) {
+                queue.add(i);
+            }
+        }
+        while (!queue.isEmpty()) {
+            int top = queue.poll();
+            nodeCount++;
+            List<Integer> neighbours = neighboursMap.get(top);
+            if (neighbours == null) {
+                continue;
+            }
+            for (int neighbour : neighbours) {
+                inDegree[neighbour]--;
+                if (inDegree[neighbour] == 0) {
+                    queue.add(neighbour);
+                }
+            }
+        }
+        return nodeCount == numCourses ? true : false;
+
+    }
+
 
     public static void main(String[] args) {
         CourseSchedule test = new CourseSchedule();

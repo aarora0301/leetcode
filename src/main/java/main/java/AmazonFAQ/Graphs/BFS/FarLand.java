@@ -20,7 +20,7 @@ import java.util.Queue;
  */
 public class FarLand {
 
-    public int maxDistance(int[][] grid) {
+    public static int maxDistance(int[][] grid) {
         if (grid == null || grid.length == 0) {
             return -1;
         }
