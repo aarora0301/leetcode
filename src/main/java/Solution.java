@@ -71,7 +71,6 @@ public class Solution {
       while (!pq.isEmpty() && k > 0 && count < k + 1) {
          NodeWeight top = pq.poll();
 
-         if ()
          if (isVisted.containsKey(top.getNode())) {
           continue;
          }

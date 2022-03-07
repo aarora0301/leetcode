@@ -31,7 +31,7 @@ public class SurroundedRegions {
         int row = board.length;
         int col = board[0].length;
         /**
-         * Traverse first row and last column
+         * Traverse first row and last row
          * so boundary cells and its neighbour should not be converted to 'X'
          * so mark them with '*', indicates that cell is visited
          */
@@ -42,7 +42,7 @@ public class SurroundedRegions {
                 dfs(board, row - 1, i);
         }
         /***
-         * Traverse first row and last row
+         * Traverse first col and last col
          *  so boundary cells and its neighbour should not be converted to 'X'
          *  so mark them with '*', indicates that cell is visited
          */

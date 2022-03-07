@@ -6,7 +6,11 @@ package main.java.AmazonFAQ.Graphs.DFS.IslandVariants;
  *
  * Return the number of closed islands.
  *
- * Input: grid = [[1,1,1,1,1,1,1,0],[1,0,0,0,0,1,1,0],[1,0,1,0,1,1,1,0],[1,0,0,0,0,1,0,1],[1,1,1,1,1,1,1,0]]
+ * Input: grid = [[1,1,1,1,1,1,1,0]
+ *               ,[1,0,0,0,0,1,1,0],
+ *               [1,0,1,0,1,1,1,0],
+ *               [1,0,0,0,0,1,0,1],
+ *               [1,1,1,1,1,1,1,0]]
  * Output: 2
  * Explanation:
  * Islands in gray are closed because they are completely surrounded by water (group of 1s).
