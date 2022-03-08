@@ -25,7 +25,7 @@ public class GenerateParanthesis {
 
     public static void main(String[] args) {
         GenerateParanthesis test = new GenerateParanthesis();
-        test.generateParenthesis(3);
+        test.generateParenthesis(2);
 
     }
 }
