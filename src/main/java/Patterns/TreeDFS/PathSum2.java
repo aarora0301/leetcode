@@ -1,2 +1,5 @@
-package Patterns.TreeDFS;public class PathSum2 {
+package Patterns.TreeDFS;
+
+public class PathSum2 {
+
 }
