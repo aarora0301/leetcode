@@ -19,6 +19,7 @@ public class CombinationSum2 {
     private void backTrack(int[] candidates, int target, List<List<Integer>> result, List<Integer> list, int start) {
         if (target == 0) {
             result.add(new ArrayList<>(list));
+            return;
         } else if (target < 0) {
             return;
         }

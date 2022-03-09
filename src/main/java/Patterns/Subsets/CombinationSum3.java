@@ -14,6 +14,7 @@ public class CombinationSum3 {
     private void backtrack(int k, int n, List<List<Integer>> result, List<Integer> list, int start, int sum) {
         if (list.size() == k && sum == n) {
             result.add(new ArrayList<>(list));
+            return;
         }
         for (int i = start; i <= 9; i++) {
             list.add(i);

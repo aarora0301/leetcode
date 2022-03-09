@@ -14,6 +14,7 @@ public class Combinations {
     private void backTrack(int n, int k, int start, List<List<Integer>> result, List<Integer> dummy) {
         if (dummy.size() == k) {
             result.add(new ArrayList<>(dummy));
+            return;
         }
         for (int i = start; i <= n; i++) {
             dummy.add(i);
