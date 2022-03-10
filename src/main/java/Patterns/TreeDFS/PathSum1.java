@@ -22,7 +22,7 @@ public class PathSum1 {
         }
     }
 
-    boolean result= Boolean.FALSE;
+    boolean result = Boolean.FALSE;
 
     public boolean hasPathSum(TreeNode root, int targetSum) {
 
