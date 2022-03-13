@@ -1,3 +1,5 @@
+package Patterns.MergeIntervals;
+
 import java.util.Arrays;
 
 /***

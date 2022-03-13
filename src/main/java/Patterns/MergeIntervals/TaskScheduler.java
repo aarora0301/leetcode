@@ -1,3 +1,5 @@
+package Patterns.MergeIntervals;
+
 /****
  * https://leetcode.com/problems/task-scheduler/
  */
