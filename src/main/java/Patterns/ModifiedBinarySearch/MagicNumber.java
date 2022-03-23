@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 /***
+ *  Uber OA
  *  A Magic number is a number that remains same after rotating 180 degress
  *   Example : 1, 11, 88, 101, 808, 69, 96
  *
