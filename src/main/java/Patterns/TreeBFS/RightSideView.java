@@ -1,9 +1,11 @@
 package Patterns.TreeBFS;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
-public class MinDepth {
+public class RightSideView {
 
     static class TreeNode {
 
@@ -26,22 +28,20 @@ public class MinDepth {
     }
 
 
-    public int minDepth(TreeNode root) {
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
         if (root == null) {
-            return 0;
+            return result;
         }
-        int depth = 0;
-        int minDepth = Integer.MAX_VALUE;
+
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
             int size = queue.size();
-            depth++;
             for (int i = 0; i < size; i++) {
                 TreeNode top = queue.poll();
-
-                if (top.left == null && top.right == null) {
-                    minDepth = Math.min(minDepth, depth);
+                if (i == size - 1) {
+                    result.add(top.val);
                 }
 
                 if (top.left != null) {
@@ -51,8 +51,14 @@ public class MinDepth {
                     queue.add(top.right);
                 }
             }
+
         }
-        return minDepth;
+        return result;
+
+    }
+
+    public static void main(String[] args) {
+
     }
 
 }

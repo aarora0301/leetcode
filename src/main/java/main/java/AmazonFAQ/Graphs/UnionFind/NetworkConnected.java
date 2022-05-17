@@ -25,4 +25,9 @@ public class NetworkConnected {
         }
         return uf.count()-1;
     }
+
+    public static void main(String[] args) {
+        NetworkConnected networkConnected= new NetworkConnected();
+        System.out.println(networkConnected.makeConnected(4, new int[][]{{0,1},{1,2},{2,0}}));
+    }
 }

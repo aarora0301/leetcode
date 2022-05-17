@@ -30,86 +30,78 @@ import java.util.*;
  */
 public class CourseSchedule2 {
 
-    private ArrayList[] graph;
-    private boolean[] isVisited;
-    private boolean[] onStack;
     boolean isCyclic;
+
+    private Map<Integer, List<Integer>> depMap;
+    private Set<Integer> isVisitedSet;
+    private Set<Integer> onStackSet;
     Queue<Integer> postOrder;
+    List<Integer> cycleList;
 
     public int[] findOrder(int numCourses, int[][] prerequisites) {
+        int index = numCourses - 1;
         int[] result = new int[numCourses];
         hasCycle(numCourses, prerequisites);
         if (isCyclic) {
             return new int[]{};
         }
-        postOrder = new LinkedList<>();
-        for (int i = 0; i < numCourses; i++) {
-            if (!isVisited[i]) {
-                dfs_postOrder(graph, i);
-            }
-        }
 
-        for (int course : postOrder) {
-            if (numCourses <= 0) {
-                return result;
-            }
-            result[numCourses - 1] = course;
-            numCourses--;
+        for (int num : postOrder) {
+            result[index--] = num;
         }
         return result;
     }
 
 
-    private void dfs_postOrder(ArrayList[] graph, int course) {
-        isVisited[course] = true;
-        List<Integer> neighbours = graph[course];
-        for (int neighbour : neighbours) {
-            if (!isVisited[neighbour]) {
-                dfs_postOrder(graph, neighbour);
-            }
-        }
-        postOrder.add(course);
-    }
-
     private void hasCycle(int numCourses, int[][] prerequisites) {
-        graph = new ArrayList[numCourses];
-        isVisited = new boolean[numCourses];
-        onStack = new boolean[numCourses];
+        depMap = new HashMap<>();
+        isVisitedSet = new HashSet<>();
+        onStackSet = new HashSet<>();
+        cycleList = new ArrayList<>();
+        postOrder = new LinkedList<>();
 
-        for (int i = 0; i < numCourses; i++) {
-            graph[i] = new ArrayList<>();
-        }
         for (int[] pre : prerequisites) {
-            graph[pre[1]].add(pre[0]);
+            depMap.putIfAbsent(pre[1], new ArrayList<>());
+            depMap.get(pre[1]).add(pre[0]);
         }
 
         for (int i = 0; i < numCourses; i++) {
-            if (!isVisited[i] && !isCyclic) {
-                dfs_cyclicity(graph, i);
+            if (!isVisitedSet.contains(i) && !isCyclic) {
+                dfs_cyclicity(i);
             }
         }
-        Arrays.fill(isVisited, false);
 
     }
 
-    private void dfs_cyclicity(ArrayList[] graph, int course) {
-        isVisited[course] = true;
-        onStack[course] = true;
-        List<Integer> neighbours = graph[course];
-        for (int neighbour : neighbours) {
-            if (isCyclic) {
-                return;
-            } else if (!isVisited[neighbour]) {
-                dfs_cyclicity(graph, neighbour);
-            } else if (onStack[neighbour]) {
-                isCyclic = true;
+    private void dfs_cyclicity(int course) {
+        isVisitedSet.add(course);
+        onStackSet.add(course);
+        List<Integer> neighbours = depMap.get(course);
+        if (neighbours == null) {
+
+        } else {
+
+            for (int neighbour : neighbours) {
+                if (isCyclic) {
+                    return;
+                } else if (!isVisitedSet.contains(neighbour)) {
+                    dfs_cyclicity(neighbour);
+                } else if (onStackSet.contains(neighbour)) {
+                    isCyclic = true;
+                    cycleList.add(course);
+                    cycleList.add(neighbour);
+                }
             }
         }
-        onStack[course] = false;
+
+        onStackSet.remove(course);
+        postOrder.add(course);
+
     }
+
     public static void main(String[] args) {
         CourseSchedule2 top = new CourseSchedule2();
-        int[][] preq = {{0,1}, {1,0}};
-        System.out.println(Arrays.toString(top.findOrder(2, preq)));
+        int[][] preq = {{1,0},{2,0},{3,1},{3,2}};
+        System.out.println(Arrays.toString(top.findOrder(4, preq)));
     }
 }
