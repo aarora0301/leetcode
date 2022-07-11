@@ -31,10 +31,10 @@ public class _CourseSchdeule2 {
             }
         }
 
-
         if (cycleExist){
             return new int[0];
         }
+
         int index = numCourses - 1;
         int[] result = new int[numCourses];
         while (!queue.isEmpty()){
